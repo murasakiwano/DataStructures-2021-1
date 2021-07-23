@@ -1,1 +1,2 @@
-DataStructures-2021-1
+# Data Structures 2021-1
+This is the repo for the discipline of "Estruturas de Dados" of the 2021.1 semester of UnB - Universidade de Brasília. This repo contains the code for the discipline and **does not include the project**.
