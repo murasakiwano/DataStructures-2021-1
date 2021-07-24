@@ -102,6 +102,32 @@ class NotGate(UnaryGate):
     else:
       return 1
 
+class NorGate(BinaryGate):
+  
+  def __init__(self, n):
+    BinaryGate.__init__(self, n)
+
+  def performGateLogic(self):
+    a = self.getPinA()
+    b = self.getPinB()
+    if a == 1 or b == 1:
+      return 0
+    else:
+      return 1
+
+
+class NandGate(BinaryGate):
+  def __init__(self, n):
+    BinaryGate.__init__(self, n)
+  
+  def performGateLogic(self):
+    a = self.getPinA()
+    b = self.getPinB()
+    if a == 1 and b == 1:
+      return 0
+    else:
+      return 1
+
 class Connector:
 
   def __init__(self, fgate, tgate):
@@ -126,4 +152,25 @@ def main():
   c3 = Connector(g3, g4)
   print(g4.getOutput())
 
-main()
+def circuit1():
+  g1 = AndGate("G1")
+  g2 = AndGate("G2")
+  g3 = NorGate("G3")
+  c1 = Connector(g1, g3)
+  c2 = Connector(g2, g3)
+  print(g3.getOutput())
+
+def circuit2():
+  g1 = AndGate("G1")
+  g2 = NotGate("G2")
+  g3 = AndGate("G3")
+  g4 = NotGate("G4")
+  g5 = AndGate("G5")
+  c1 = Connector(g1, g2)
+  c2 = Connector(g3, g4)
+  c3 = Connector(g2, g5)
+  c4 = Connector(g4, g5)
+  print(g5.getOutput())
+
+circuit1()
+circuit2()
