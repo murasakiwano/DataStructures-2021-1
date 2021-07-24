@@ -54,7 +54,10 @@ class UnaryGate(LogicGate):
     self.pin = None
 
   def getPin(self):
-    return int(input("Digite a entrada do Pino para a porta " + self.getLabel() + "-->"))
+    if self.pin == None:
+      return int(input("Digite a entrada do Pino para a porta " + self.getLabel() + "-->"))
+    else:
+      return self.pin.getFrom().getOutput()
 
   def setNextPin(self, source):
     if self.pin == None:
@@ -94,12 +97,10 @@ class NotGate(UnaryGate):
     UnaryGate.__init__(self, n)
 
   def performGateLogic(self):
-    p = self.getPin()
-
-    if p == 0:
-      return 1
-    else:
+    if self.getPin():
       return 0
+    else:
+      return 1
 
 class Connector:
 
@@ -115,13 +116,14 @@ class Connector:
   def getTo(self):
     return self.togate
 
-# Constructing circuit.
-g1 = AndGate("G1")
-g2 = AndGate("G2")
-g3 = OrGate("G3")
-g4 = NotGate("G4")
-c1 = Connector(g1, g3)
-c2 = Connector(g2, g3)
-c3 = Connector(g3, g4)
+def main():
+  g1 = AndGate("G1")
+  g2 = AndGate("G2")
+  g3 = OrGate("G3")
+  g4 = NotGate("G4")
+  c1 = Connector(g1, g3)
+  c2 = Connector(g2, g3)
+  c3 = Connector(g3, g4)
+  print(g4.getOutput())
 
-g4.getOutput()
+main()
