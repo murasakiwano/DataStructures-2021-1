@@ -57,13 +57,10 @@ class UnaryGate(LogicGate):
     return int(input("Digite a entrada do Pino para a porta " + self.getLabel() + "-->"))
 
   def setNextPin(self, source):
-    if self.pinA == None:
-      self.pinA = source
+    if self.pin == None:
+      self.pin = source
     else:
-      if self.pinB == None:
-        self.pinB = source
-      else:
-        raise RuntimeError("Erro: NÃO HÁ PINO LIVRE")
+      raise RuntimeError("Erro: NÃO HÁ PINO LIVRE")
 
 class AndGate(BinaryGate):
 
