@@ -23,12 +23,18 @@ class BinaryGate(LogicGate):
     self.pinB = None
 
   def getPinA(self):
-    return int(input("Digite a entrada do Pino A para a porta " +
-     self.getLabel() + "-->"))
+    if self.pinA == None:
+      return int(input("Digite a entrada do Pino A para a porta " +
+              self.getLabel() + "-->"))
+    else:
+      return self.pinA.getFrom().getOutput()
 
   def getPinB(self):
-    return int(input("Digite a entrada do Pino B para a porta " +
-     self.getLabel() + "-->"))
+    if self.pinB == None:
+      return int(input("Digite a entrada do Pino B para a porta " +
+              self.getLabel() + "-->"))
+    else:
+      return self.pinB.getFrom().getOutput()
   
 
 class UnaryGate(LogicGate):
