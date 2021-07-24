@@ -79,3 +79,27 @@ class NotGate(UnaryGate):
       return 1
     else:
       return 0
+
+class Connector:
+
+  def __init__(self, fgate, tgate):
+    self.fromgate = fgate
+    self.togate = tgate
+
+    tgate.setNextPin(self)
+
+  def getFrom(self):
+    return self.fromgate
+
+  def getTo(self):
+    return self.togate
+
+  def setNextPin(self, source):
+    if self.pinA == None:
+      self.pinA = source
+    else:
+      if self.pinB == None:
+        self.pinB = source
+      else:
+        raise RuntimeError("Erro: NÃO HÁ PINO LIVRE")
+
