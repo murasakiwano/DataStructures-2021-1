@@ -35,6 +35,15 @@ class BinaryGate(LogicGate):
               self.getLabel() + "-->"))
     else:
       return self.pinB.getFrom().getOutput()
+
+  def setNextPin(self, source):
+    if self.pinA == None:
+      self.pinA = source
+    else:
+      if self.pinB == None:
+        self.pinB = source
+      else:
+        raise RuntimeError("Erro: NÃO HÁ PINO LIVRE")
   
 
 class UnaryGate(LogicGate):
@@ -46,6 +55,15 @@ class UnaryGate(LogicGate):
 
   def getPin(self):
     return int(input("Digite a entrada do Pino para a porta " + self.getLabel() + "-->"))
+
+  def setNextPin(self, source):
+    if self.pinA == None:
+      self.pinA = source
+    else:
+      if self.pinB == None:
+        self.pinB = source
+      else:
+        raise RuntimeError("Erro: NÃO HÁ PINO LIVRE")
 
 class AndGate(BinaryGate):
 
@@ -100,12 +118,13 @@ class Connector:
   def getTo(self):
     return self.togate
 
-  def setNextPin(self, source):
-    if self.pinA == None:
-      self.pinA = source
-    else:
-      if self.pinB == None:
-        self.pinB = source
-      else:
-        raise RuntimeError("Erro: NÃO HÁ PINO LIVRE")
+# Constructing circuit.
+g1 = AndGate("G1")
+g2 = AndGate("G2")
+g3 = OrGate("G3")
+g4 = NotGate("G4")
+c1 = Connector(g1, g3)
+c2 = Connector(g2, g3)
+c3 = Connector(g3, g4)
 
+g4.getOutput()
