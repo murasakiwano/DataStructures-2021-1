@@ -1,6 +1,13 @@
 # Exercício 7 - copy + paste
 from math import ceil
 
+# O seguinte teste é por precisão
+def testePrecisao(n, d):
+    if (n / d) - (n // d ) < 0.00001:
+        return int(n // d)
+    else:
+        return ceil(n / d)
+
 fileSize = int(input()) # tamanho do arquivo em bytes
 
 total_data_transferred = 0
@@ -28,8 +35,10 @@ while total_data_transferred <= fileSize:
         if cycle_data == 0:
             print("Tempo restante: pendente...")
         else:
-            rate = cycle_data / 5
-            t_remaining = ceil((fileSize - total_data_transferred) / rate)
+            rate = cycle_data / 5 
+            t_remaining = testePrecisao(fileSize - total_data_transferred, rate)
+            # print('Taxa', rate)
+            # print((fileSize - total_data_transferred) / rate)
             print(f"Tempo restante: {t_remaining} segundos.")
         cycle_data = 0
 
