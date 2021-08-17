@@ -1,8 +1,8 @@
 # Função para checar se os parênteses estão balanceados
-from Pilha import Pilha
+from DataStructuresChapter3.Stack import Stack
 
 def checkSymbol(symbolString):
-    s = Pilha()
+    s = Stack()
     balanced = True
     index = 0
     while index < len(symbolString) and balanced:

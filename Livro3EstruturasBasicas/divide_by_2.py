@@ -1,7 +1,7 @@
-from Pilha import Pilha
+from DataStructuresChapter3.Stack import Stack
 
 def divisaoPor2(decNumber):
-    restoPilha = Pilha()
+    restoPilha = Stack()
 
     while decNumber > 0:
         resto = decNumber % 2

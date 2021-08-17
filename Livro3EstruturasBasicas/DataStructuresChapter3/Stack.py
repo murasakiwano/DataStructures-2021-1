@@ -1,4 +1,4 @@
-class Pilha: # considerando que o topo é o fim da lista
+class Stack: # considerando que o topo é o fim da lista
     def __init__(self):
         self.items = []
 

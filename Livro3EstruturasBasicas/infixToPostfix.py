@@ -1,4 +1,4 @@
-from Pilha import Pilha
+from DataStructuresChapter3.Stack import Stack
 import string
 
 def infixToPostfix(infixexpr):
@@ -9,7 +9,7 @@ def infixToPostfix(infixexpr):
     prec["-"] = 2
     prec["("] = 1
 
-    opStack = Pilha()
+    opStack = Stack()
     postfixList = []
 
     tokenList = infixexpr.split()

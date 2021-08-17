@@ -1,10 +1,10 @@
-from Pilha import Pilha
+from DataStructuresChapter3.Stack import Stack
 
 # Versão do divisaoPor2 generalizado para qualquer base entre 2 e 16
 def baseConverter(decNumber, base):
     digits = "0123456789ABCDEF"
 
-    remstack = Pilha()
+    remstack = Stack()
 
     while decNumber > 0:
         resto = decNumber % base

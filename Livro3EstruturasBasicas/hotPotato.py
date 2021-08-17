@@ -1,7 +1,7 @@
 # Implementação da simulação de Batata Quente.
 # Também pode ser considerada uma versão do problema clássico Flavius Josephus.
 
-from basicDS import Queue
+from DataStructuresChapter3.Queue import Queue
 
 def hotPotato(namelist, num):
     simqueue = Queue()

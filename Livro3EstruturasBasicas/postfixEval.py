@@ -1,7 +1,7 @@
-from Pilha import Pilha
+from DataStructuresChapter3.Stack import Stack
 
 def postfixEval(postfixExpr):
-    operandStack = Pilha()
+    operandStack = Stack()
 
     tokenList = postfixExpr.split()
 
