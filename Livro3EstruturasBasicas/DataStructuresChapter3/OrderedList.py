@@ -26,7 +26,7 @@ class OrderedList:
                 found = True
             else:
                 previous = current
-                current.setNext(current.getNext())
+                current = current.getNext()
 
         if previous == None:
             self.head = current.getNext()
