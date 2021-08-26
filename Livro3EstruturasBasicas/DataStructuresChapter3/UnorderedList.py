@@ -1,101 +1,73 @@
-from Node import Node
+class Node:
+    def __init__(self, initdata):
+        self.data = initdata
+        self.next = None
+    
+    def getData(self):
+        return self.data
+    
+    def getNext(self):
+        return self.next
+    
+    def setData(self, newdata):
+        self.data = newdata
+    
+    def setNext(self, newnext):
+        self.next = newnext
 
 class UnorderedList:
     def __init__(self):
         self.head = None
 
+    def __str__(self):
+        tmp = self.head
+        lstr = ''
+        while tmp != None:
+            lstr += str(tmp.data) + ''
+            tmp = tmp.getNext()
+        
+        return lstr
+    
     def isEmpty(self):
-        return self.head == None # Se não aponta para a cabeça, tá vazia
+        return self.head == None
     
     def add(self, item):
         temp = Node(item)
         temp.setNext(self.head)
         self.head = temp
-
-    def length(self):
+    
+    def size(self):
         current = self.head
         count = 0
-        while current:
+        while current != None:
             count = count + 1
             current = current.getNext()
-        
+
         return count
 
-    def search(self, item):
+    def search(self,item):
         current = self.head
         found = False
-        while current and not found:
-            if current.data == item:
+        while current != None and not found:
+            if current.getData() == item:
                 found = True
             else:
                 current = current.getNext()
 
         return found
-
-    def remove(self, item):
-        previous = None
+    
+    def remove(self,item):
         current = self.head
+        previous = None
         found = False
-        while current and not found:
+        while not found:
             if current.getData() == item:
                 found = True
             else:
                 previous = current
-                current.setNext(current.getNext())
-
+                current = current.getNext()
+            
         if previous == None:
             self.head = current.getNext()
         else:
             previous.setNext(current.getNext())
-
-    def append(self, item):
-        previous = None
-        current = self.head
-        newItem = Node(item)
-        l = self.length()
-
-        for i in range(l):
-            previous = current
-            current.setNext(current.getNext)
-        
-        previous.setNext(newItem)
-
-    def insert(self, pos, item):
-        previous = None
-        current = self.head
-        count = 0
-        newItem = Node(item)
-
-        if pos == 0:
-            newItem.setNext(self.head)
-            self.head = newItem
-        else:
-            while count < pos:
-                count = count + 1
-                previous = current
-                current = current.getNext()
-            
-            previous.setNext(newItem)
-            newItem.setNext(current)
-
-    def index(self, item):
-        current = self.head
-        count = 0
-        while current.data != item:
-            count = count + 1
-            current = current.getNext()
-        
-        return count
-
-    def pop(self):
-        l = self.length()
-        current = self.head
-        previous = None
-        for i in range(l-1):
-            previous = current
-            current = current.getNext()
-        
-        item = current.getData()
-        previous.setNext(None)
-
-        return item
