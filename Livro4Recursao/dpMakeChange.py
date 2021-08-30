@@ -19,7 +19,7 @@ def printCoins(coinsUsed, change):
         coin = coin - thisCoin
     
 def main():
-    amnt = 10
+    amnt = 63
     clist = [1, 5, 10, 21, 25]
     coinsUsed = [0]*(amnt+1)
     coinCount = [0]*(amnt+1)
