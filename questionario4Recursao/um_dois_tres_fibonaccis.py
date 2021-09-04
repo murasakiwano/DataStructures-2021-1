@@ -3,17 +3,17 @@
 
 contador = 0
 
-def Fib(n, cont):
+def Fib(n):
     global contador
     contador += 1
     if n == 0:
-        return 0, cont
+        return 0
     elif n == 1:
-        return 1, cont
+        return 1
     else:
-        return Fib(n-2, cont + 1)[0] + Fib(n-1, cont + 1)[0], cont
+        return Fib(n-2) + Fib(n-1)
 
 n = int(input())
 
-f, c = Fib(n, 0)
-print(f"Fib({n}) = {f} ({c} chamadas)")
+f = Fib(n)
+print(f"Fib({n}) = {f} ({contador} chamadas)")
