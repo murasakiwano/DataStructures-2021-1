@@ -1,5 +1,5 @@
 
-dicionario = {}
+dicionario = {0:0}
 
 def fibonacci_III(n):
 
@@ -20,7 +20,7 @@ F = fibonacci_III(N)
 print(f"fibonacci({N}) = {F}.")
 
 L = list(dicionario.keys())
-L.reverse()
+L.sort()
 
 for x in L:
     print(f"{dicionario[x]} chamada(s) a fibonacci({x}).")
