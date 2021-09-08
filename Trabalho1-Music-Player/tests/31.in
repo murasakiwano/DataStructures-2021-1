@@ -1,0 +1,11 @@
+add Alucinacao
+add SujeitoDeSorte
+list
+current
+del Alucinacao
+list
+current
+undo
+list
+current
+fight

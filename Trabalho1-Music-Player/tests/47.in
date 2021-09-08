@@ -1,0 +1,13 @@
+add INeedYouNow
+add Stardust
+play
+next Stardust
+ended
+add RockinRobin
+ended
+add Milord
+undo *
+current
+next INeedYouNow
+current
+fight

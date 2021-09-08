@@ -1,0 +1,36 @@
+add KlingonBattle
+del KlingonBattle
+add TotalLogic
+del TotalLogic
+add FloatingOffice
+del FloatingOffice
+add TheEnterprise
+del TheEnterprise
+add LeavingDrydock
+del LeavingDrydock
+add SpocksArrival
+del SpocksArrival
+add TheCloud
+del TheCloud
+add VejurFlyover
+del VejurFlyover
+add TheForceField
+del TheForceField
+add SpockWalk
+del SpockWalk
+add InnerWorkings
+del InnerWorkings
+add VejurSpeaks
+del VejurSpeaks
+add TheMeld
+del TheMeld
+add AGoodStart
+del AGoodStart
+add InsideStarTrek
+del InsideStarTrek
+add TheOriginOfSpock
+del TheOriginOfSpock
+add TheQuestorAffair
+del TheQuestorAffair
+current
+fight

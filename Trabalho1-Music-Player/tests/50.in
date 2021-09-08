@@ -1,0 +1,12 @@
+add KaikaiKitan
+add Rakuen
+play
+ended
+play
+undo
+current
+del Rakuen
+current
+undo *
+current
+fight

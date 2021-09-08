@@ -1,0 +1,12 @@
+add PennyLane
+add LayLadyLay
+add BakerStreet
+play
+ended
+stop
+del PennyLane
+del LayLadyLay
+undo *
+current
+play
+fight

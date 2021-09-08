@@ -1,0 +1,26 @@
+add Alucinacao
+list
+add SujeitoDeSorte
+list
+add TudoOutraVez
+list
+add ApenasUmRapazLatinoAmericano
+list
+add CoracaoSelvagem
+list
+del CoracaoSelvagem
+list
+undo
+del ApenasUmRapazLatinoAmericano
+list
+undo
+del TudoOutraVez
+list
+undo
+del SujeitoDeSorte
+list
+undo
+del Alucinacao
+list
+undo
+fight

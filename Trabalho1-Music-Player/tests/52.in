@@ -1,0 +1,37 @@
+add EveryBreathYouTake
+current
+ended
+add PreciousFew
+stop
+undo *
+add JackJill
+play
+del EveryBreathYouTake
+del PreciousFew
+add StartMeUp
+del EveryBreathYouTake
+add ISawtheLight
+del EveryBreathYouTake
+add WhentheLightsGoOut
+add IKnewYouWereWaitingForMe
+play
+add CaliforniaLove
+del EveryBreathYouTake
+add ItsRainingAgain
+add Shannon
+stop
+list
+stop
+stop
+add LovingYou
+current
+add WishingOnaStar
+ended
+add BeautifulSunday
+next BeautifulSunday
+del EveryBreathYouTake
+del Shannon
+add IWasMadeForLovinYou
+undo *
+stop
+fight

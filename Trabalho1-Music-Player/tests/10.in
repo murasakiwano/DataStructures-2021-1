@@ -1,0 +1,11 @@
+add RockawayBeach
+add BlitzKriegBop
+list
+next BlitzKriegBop
+list
+current
+play
+current
+next PalhasDoCoqueiro
+list
+fight

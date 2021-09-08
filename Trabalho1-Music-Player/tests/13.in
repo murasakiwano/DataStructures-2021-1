@@ -1,0 +1,14 @@
+add LoveOfMyLife
+play
+add DontStopMeNow
+add RockIt
+add BohemianRhapsody
+list
+current
+next BohemianRhapsody
+list
+next RockIt
+list
+undo
+list
+fight
