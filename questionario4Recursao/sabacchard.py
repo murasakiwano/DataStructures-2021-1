@@ -1,10 +1,21 @@
-def pontuar(cartas):
-    if len(cartas) <= 3:
-        m1 = max(cartas)
-        cartas.remove(m1)
-        return m1 + max(cartas)
-    s1 = descartar(cartas[1:])
-    s2 = descartar(cartas[:-1])
+table_of_results = {}
 
-def descartar(cartas):
-    return pontuar(cartas)
+def descartar(cards):
+    desc_first = pontuar(cards[1:])
+    desc_last = pontuar(cards[:-1])
+    return max(desc_first, desc_last)
+
+def pontuar(cards):
+    if str(cards) in table_of_results:
+        return table_of_results[str(cards)]
+    if len(cards) <= 2:
+        return max(cards)
+    pontua_first = cards[0] + descartar(cards[1:])
+    pontua_last = cards[-1] + descartar(cards[:-1])
+    table_of_results[str(cards)] = max(pontua_first, pontua_last)
+    return table_of_results[str(cards)]
+
+N = int(input())
+cards = [int(x) for x in input().split()]
+
+print(pontuar(cards))
