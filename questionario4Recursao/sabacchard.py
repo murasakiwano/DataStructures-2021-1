@@ -1,16 +1,10 @@
-combinacoes = []
+def pontuar(cartas):
+    if len(cartas) <= 3:
+        m1 = max(cartas)
+        cartas.remove(m1)
+        return m1 + max(cartas)
+    s1 = descartar(cartas[1:])
+    s2 = descartar(cartas[:-1])
 
-def gerar_combinacoes(cartas, combinacoes): # Função que vai gerar as combinações possíveis
-    if cartas == []:
-        return [cartas]
-    else:
-            head = gerar_combinacoes(cartas[:-1])
-            return head + [carta + [cartas[-1]] for carta in head]
-
-N = int(input())           
-L = [int(x) for x in input().split()]
-gerar_combinacoes(L)
-combs = list(filter(lambda x: len(x) == N / 2, combinacoes))
-sum_combs = [sum(x) for x in combs]
-largest_sum = max(sum_combs)
-print(largest_sum)
+def descartar(cartas):
+    return pontuar(cartas)
