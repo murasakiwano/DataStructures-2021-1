@@ -4,19 +4,19 @@ def quick_sort(lista):
 def quick_sort_helper(lista, primeiro, ultimo):
     if primeiro < ultimo:
 
-        part = partition(lista, primeiro, ultimo)
+        part = particionar(lista, primeiro, ultimo)
 
         quick_sort_helper(lista, primeiro, part - 1)
         quick_sort_helper(lista, part + 1, ultimo)
 
-def partition(lista, primeiro, ultimo):
+def particionar(lista, primeiro, ultimo):
     pivo = lista[primeiro]
 
     esquerda = primeiro + 1
     direita = ultimo
 
-    done = False
-    while not done:
+    terminou = False
+    while not terminou:
 
         while esquerda <= direita and lista[esquerda] <= pivo:
             esquerda += 1
@@ -25,7 +25,7 @@ def partition(lista, primeiro, ultimo):
             direita -= 1
         
         if direita < esquerda:
-            done = True
+            terminou = True
         else:
             tmp = lista[esquerda]
             lista[esquerda] = lista[direita]
