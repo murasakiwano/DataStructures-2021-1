@@ -35,6 +35,9 @@ class Graph:
     def __iter__(self):
         return iter(self.vertList.values())
 
+    def __str__(self):
+        return str([str(x) for x in self.vertList])
+
 
 class Vertex:
     def __init__(self, num):
@@ -89,7 +92,7 @@ class Vertex:
         return self.connectedTo[nbr]
 
     def __str__(self):
-        return str(self.id) + ":color " + self.color + ":disc " + str(self.disc) + ":fin " + str(self.fin) + ":dist " + str(self.dist) + ":pred \n\t[" + str(self.pred) + "]\n"
+        return str(self.id) + " :color " + self.color + " :disc " + str(self.disc) + " :fin " + str(self.fin) + " :dist " + str(self.dist) + " :pred \n\t[" + str(self.pred) + "]\n"
 
     def getId(self):
         return self.id
