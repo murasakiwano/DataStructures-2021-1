@@ -10,7 +10,7 @@ def dijkstra(aGraph, start):
         currentVert = heapq.heappop(pq)
         for nextVert in currentVert.getConnections():
             newDist = currentVert.getDistance() \
-                    + currentVert.getWeight(nextVert)
+                + currentVert.getWeight(nextVert)
             if newDist < nextVert.getDistance():
                 nextVert.setDistance(newDist)
                 nextVert.setPred(currentVert)
@@ -18,4 +18,3 @@ def dijkstra(aGraph, start):
                     pq.pop(nextVert)
                     heapq.heapify(pq)
                 heapq.heappush((newDist, nextVert))
-    
