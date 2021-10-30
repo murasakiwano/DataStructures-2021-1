@@ -75,5 +75,7 @@ for _ in range(n):
 print(f'Os vértices são {grafo.vertices}')
 print(f'As arestas são {grafo.arestas}')
 
-print(grafo.grau_saida('A'), grafo.grau_entrada('A'), grafo.grau_saida('B'), grafo.grau_entrada('B'), grafo.grau_saida('C'), grafo.grau_entrada('C'))
-print(grafo.alcancavel('C', 'B'), grafo.alcancavel('A', 'C'), grafo.alcancavel('C', 'A'))
+print(grafo.grau_saida('A'), grafo.grau_entrada('A'), grafo.grau_saida(
+    'B'), grafo.grau_entrada('B'), grafo.grau_saida('C'), grafo.grau_entrada('C'))
+print(grafo.alcancavel('C', 'B'), grafo.alcancavel(
+    'A', 'C'), grafo.alcancavel('C', 'A'))
